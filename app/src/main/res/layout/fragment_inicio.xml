@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="@dimen/margen_normal"
+    tools:context="luis.proyectomultimedia.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_titulo_app"
+        android:text="@string/titulo"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/cero"
+        android:layout_weight="1"
+        style="@style/Base.TextAppearance.AppCompat.Title"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cero"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:columnCount="4"
+        android:rowCount="3">
+
+        <ImageView
+            android:id="@+id/iv_fotos"
+            android:layout_width="@dimen/icono_menu_ancho"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:contentDescription="@string/fotos"
+            android:src="@drawable/camara_fotos_toon" />
+
+        <TextView
+            android:id="@+id/tv_fotos"
+            android:layout_gravity="center_vertical"
+            android:text="@string/fotos"
+            android:textSize="@dimen/texto_menu" />
+
+        <ImageView
+            android:id="@+id/iv_video"
+            android:layout_width="@dimen/icono_menu_ancho"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:contentDescription="@string/video"
+            android:src="@drawable/camara_video_toon" />
+
+        <TextView
+            android:id="@+id/tv_video"
+            android:layout_gravity="center_vertical"
+            android:text="@string/video"
+            android:textSize="@dimen/texto_menu" />
+
+        <ImageView
+            android:id="@+id/iv_audio"
+            android:layout_width="@dimen/icono_menu_ancho"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:contentDescription="@string/audio"
+            android:src="@drawable/microfono_toon" />
+
+        <TextView
+            android:id="@+id/tv_audio"
+            android:layout_gravity="center_vertical"
+            android:text="@string/audio"
+            android:textSize="@dimen/texto_menu" />
+
+        <ImageView
+            android:id="@+id/iv_galeria"
+            android:layout_width="@dimen/icono_menu_ancho"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:contentDescription="@string/galeria"
+            android:src="@drawable/galeria_toon" />
+
+        <TextView
+            android:id="@+id/tv_galeria"
+            android:layout_gravity="center_vertical"
+            android:text="@string/galeria"
+            android:textSize="@dimen/texto_menu" />
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cero"
+        android:layout_gravity="center"
+        android:columnCount="2"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/iv_config"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/icono_menu_ancho"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:src="@drawable/configuracion_toon"
+            android:contentDescription="@string/configuraci_n"/>
+
+        <ImageView
+            android:id="@+id/iv_salir"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/icono_menu_ancho"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:src="@drawable/exit"
+            android:contentDescription="@string/salir"/>
+
+        <TextView
+            android:id="@+id/tv_configuracion"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/texto_menu"
+            android:text="@string/configuraci_n"/>
+
+
+        <TextView
+            android:id="@+id/tv_salir"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/texto_menu"
+            android:text="@string/salir"/>
+    </GridLayout>
+
+</LinearLayout>
