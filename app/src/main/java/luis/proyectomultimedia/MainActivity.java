@@ -3,7 +3,6 @@ package luis.proyectomultimedia;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.icu.text.SimpleDateFormat;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
@@ -19,8 +18,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.io.File;
-import java.util.Calendar;
-import java.util.Date;
 
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -30,7 +27,6 @@ public class MainActivity extends FragmentActivity implements SeleccionItem {
     private final String CARPETA_RAIZ = "misImagenesPruebas/";
     private final String RUTA_IMAGEN = CARPETA_RAIZ + "misFotos";
 
-    final int COD_SELECCIONA = 10;
     final int COD_FOTO = 20;
 
     private String path;
@@ -64,16 +60,12 @@ public class MainActivity extends FragmentActivity implements SeleccionItem {
                 i = new Intent(getApplication(),GaleriaActivity.class);
                 i.putExtra("RUTA",RUTA_IMAGEN);
                 startActivity(i);
-                /*Intent intent = new Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                intent.setType("image/");
-                startActivityForResult(intent.createChooser(intent, "Seleccione la aplicación"),COD_SELECCIONA);*/
                 break;
             case 4:
                 Toast.makeText(getApplicationContext(),"Proximamente",Toast.LENGTH_LONG).show();
                 break;
             case 5:
                 finish();
-                //Toast.makeText(getApplicationContext(),"Proximamente",Toast.LENGTH_LONG).show();
                 break;
         }
     }
@@ -83,27 +75,14 @@ public class MainActivity extends FragmentActivity implements SeleccionItem {
         File fileImagen = new File(Environment.getExternalStorageDirectory(),RUTA_IMAGEN);
         boolean creada = fileImagen.exists();
         String nombre ="";
-        //String nombre2 = "";
 
         if (creada == false){
             creada = fileImagen.mkdirs();
         }
 
         if (creada == true){
-            /*Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(System.currentTimeMillis());
-
-            int mYear = calendar.get(Calendar.YEAR);
-            int mMonth = calendar.get(Calendar.MONTH);
-            int mDay = calendar.get(Calendar.DAY_OF_MONTH);
-            int mhour = calendar.get(Calendar.HOUR_OF_DAY);
-            int mMinute = calendar.get(Calendar.MINUTE);
-            int mSecond = calendar.get(Calendar.SECOND);
-            nombre =  String.valueOf(mDay) + "_" + String.valueOf(mMonth) + "_" + String.valueOf(mYear) +
-                    "_" + String.valueOf(mhour) + "_" + String.valueOf(mMinute) + "_" + String.valueOf(mSecond) + ".jpg";*/
             nombre = "img_" + (System.currentTimeMillis() / 100 + ".jpg");
             path = Environment.getExternalStorageDirectory() + File.separator + RUTA_IMAGEN + File.separator + nombre;
-
 
             File imagen = new File(path);
 
@@ -120,10 +99,6 @@ public class MainActivity extends FragmentActivity implements SeleccionItem {
 
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
-                /*case COD_SELECCIONA:
-                    Uri MiPath = data.getData();
-                    imagen.setImageURI(MiPath);
-                    break;*/
                 case COD_FOTO:
                     MediaScannerConnection.scanFile(this, new String[]{path}, null,
                             new MediaScannerConnection.OnScanCompletedListener() {
@@ -179,7 +154,6 @@ public class MainActivity extends FragmentActivity implements SeleccionItem {
         if (requestCode == 100){
             if (grantResults.length == 2 && grantResults[0] == PackageManager.PERMISSION_GRANTED &&
                     grantResults[1] == PackageManager.PERMISSION_GRANTED){
-                //botonCargar.setEnabled(true);
             } else{
                 solicitarPermisosManual();
             }

@@ -31,7 +31,6 @@ public class Inicio extends Fragment {
 
 
     public Inicio() {
-        // Required empty public constructor
     }
 
 

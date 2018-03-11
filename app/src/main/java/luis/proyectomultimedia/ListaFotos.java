@@ -1,12 +1,16 @@
 package luis.proyectomultimedia;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
@@ -37,13 +41,13 @@ public class ListaFotos extends Fragment {
     private final String CARPETA_RAIZ = "misImagenesPruebas/";
     private final String RUTA_IMAGEN = CARPETA_RAIZ + "misFotos";
     private MyArrayAdapter adapter;
-
-    public ListaFotos() {}
-
+    private final int elemento = R.id.lv_fotos;
     private final String ruta = Environment.getExternalStorageDirectory() + File.separator + RUTA_IMAGEN;
     ListView listView;
     ArrayList<Foto> fotos = new ArrayList<>();
     String path;
+
+    public ListaFotos() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,6 +61,14 @@ public class ListaFotos extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final Foto item = (Foto)adapter.getItem(position);
+                final File f = new File(item.getRuta());
+                if(f.exists()){
+                    f.getName();
+
+                    Activity act = getActivity();
+                    ((SeleccionLista)act).seleccionado(position,String.valueOf(f));
+                }
             }
         });
 
@@ -92,12 +104,11 @@ public class ListaFotos extends Fragment {
         final File f = new File(item.getRuta());
         if(f.exists()){
             f.getName();
-            Toast.makeText(getContext(),"" + f.getName(),Toast.LENGTH_LONG).show();
 
             final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
             LayoutInflater inflater = getLayoutInflater();
 
-            final View v = inflater.inflate(R.layout.fragment_dialog_renombrar,null);
+            final View v = inflater.inflate(R.layout.layout_diaalog_renombrar,null);
             builder.setView(v)
                     .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                         @Override

@@ -8,9 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class GaleriaSelect extends Fragment {
 
     final int ITEMS[]={
@@ -19,9 +16,7 @@ public class GaleriaSelect extends Fragment {
             R.id.btn_video
     };
 
-
     public GaleriaSelect() {
-        // Required empty public constructor
     }
 
 

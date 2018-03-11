@@ -1,7 +1,5 @@
 package luis.proyectomultimedia;
 
-//import android.app.FragmentManager;
-//import android.app.FragmentTransaction;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
@@ -9,7 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class GaleriaActivity extends FragmentActivity implements SeleccionItem{
+public class GaleriaActivity extends FragmentActivity implements SeleccionItem,SeleccionLista{
 
     private Fragment fragmento;
     private int seleccion;
@@ -44,15 +42,26 @@ public class GaleriaActivity extends FragmentActivity implements SeleccionItem{
                 FragmentTransaction trans = manejador.beginTransaction();
                 trans.replace(R.id.frag_galeria_select,fragmento);
                 trans.commit();
-                Toast.makeText(getApplicationContext(),"Fotos",Toast.LENGTH_SHORT).show();
                 break;
             case 1:
-                Toast.makeText(getApplicationContext(),"Audio",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Proximamente",Toast.LENGTH_SHORT).show();
                 break;
             case 2:
-                Toast.makeText(getApplicationContext(),"Video",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Proximamente",Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    @Override
+    public void seleccionado(int pos, String ruta) {
+        fragmento = new VisorFrag();
+        FragmentManager manejador = getSupportFragmentManager();
+        FragmentTransaction trans = manejador.beginTransaction();
+        Bundle bundle = new Bundle();
+        bundle.putCharSequence("Ruta",ruta);
+        fragmento.setArguments(bundle);
+        trans.replace(R.id.frag_galeria_select,fragmento);
+        trans.commit();
     }
 
     @Override
