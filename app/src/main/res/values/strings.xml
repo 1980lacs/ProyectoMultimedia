@@ -15,4 +15,5 @@
     <string name="borrar">Borrar</string>
     <string name="nuevo_nombre">Nuevo nombre</string>
     <string name="introduce_el_nombre_nuevo">Introduce el nombre nuevo</string>
+    <string name="seleccion_categoria">Selección Categoría</string>
 </resources>

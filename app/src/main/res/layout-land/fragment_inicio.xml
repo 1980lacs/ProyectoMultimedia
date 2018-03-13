@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="@dimen/margen_normal"
+    tools:context="luis.proyectomultimedia.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_titulo_app"
+        android:text="@string/titulo"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/cero"
+        android:layout_weight="1"
+        style="@style/Base.TextAppearance.AppCompat.Title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_fotos"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:layout_weight="1"
+            android:contentDescription="@string/fotos"
+            android:src="@drawable/fotos" />
+
+        <ImageView
+            android:id="@+id/iv_video"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:layout_weight="1"
+            android:contentDescription="@string/video"
+            android:src="@drawable/video" />
+
+        <ImageView
+            android:id="@+id/iv_config"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:layout_weight="1"
+            android:contentDescription="@string/configuraci_n"
+            android:src="@drawable/config" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_fotos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/fotos"
+            android:textSize="@dimen/texto_menu" />
+
+        <TextView
+            android:id="@+id/tv_video"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="@string/video"
+            android:textSize="@dimen/texto_menu" />
+
+        <TextView
+            android:id="@+id/tv_configuracion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/configuraci_n"
+            android:textSize="@dimen/texto_menu" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_audio"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:contentDescription="@string/audio"
+            android:src="@drawable/audio" />
+
+        <ImageView
+            android:id="@+id/iv_galeria"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_margin="@dimen/margen_normal"
+            android:contentDescription="@string/galeria"
+            android:src="@drawable/galeria" />
+
+        <ImageView
+            android:id="@+id/iv_salir"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/icono_menu_alto"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margen_normal"
+            android:contentDescription="@string/salir"
+            android:src="@drawable/salir" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_audio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/audio"
+            android:textSize="@dimen/texto_menu" />
+
+        <TextView
+            android:id="@+id/tv_galeria"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/galeria"
+            android:textSize="@dimen/texto_menu" />
+
+        <TextView
+            android:id="@+id/tv_salir"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/salir"
+            android:textSize="@dimen/texto_menu" />
+    </LinearLayout>
+
+</LinearLayout>

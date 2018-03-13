@@ -7,13 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class GaleriaSelect extends Fragment {
 
     final int ITEMS[]={
-            R.id.btn_fotos,
-            R.id.btn_audio,
-            R.id.btn_video
+            R.id.iv_imagenes,
+            R.id.iv_audios,
+            R.id.iv_videos
     };
 
     public GaleriaSelect() {
@@ -28,7 +29,7 @@ public class GaleriaSelect extends Fragment {
 
         for (int i = 0 ; i < ITEMS.length ; i++){
 
-            Button boton = menu.findViewById(ITEMS[i]);
+            ImageView boton = menu.findViewById(ITEMS[i]);
             final int seleccion = i;
 
             boton.setOnClickListener(new View.OnClickListener() {

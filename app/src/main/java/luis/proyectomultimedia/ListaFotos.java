@@ -159,6 +159,7 @@ public class ListaFotos extends Fragment {
         }
         return item;
     }
+
 }
 
 class MyArrayAdapter extends ArrayAdapter {
@@ -236,3 +237,5 @@ class Holder{
     TextView texto;
     int pos;
 }
+
+

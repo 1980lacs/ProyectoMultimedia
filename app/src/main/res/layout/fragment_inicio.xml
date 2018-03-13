@@ -31,7 +31,7 @@
             android:layout_height="@dimen/icono_menu_alto"
             android:layout_margin="@dimen/margen_normal"
             android:contentDescription="@string/fotos"
-            android:src="@drawable/camara_fotos_toon" />
+            android:src="@drawable/fotos" />
 
         <TextView
             android:id="@+id/tv_fotos"
@@ -45,7 +45,7 @@
             android:layout_height="@dimen/icono_menu_alto"
             android:layout_margin="@dimen/margen_normal"
             android:contentDescription="@string/video"
-            android:src="@drawable/camara_video_toon" />
+            android:src="@drawable/video" />
 
         <TextView
             android:id="@+id/tv_video"
@@ -59,7 +59,7 @@
             android:layout_height="@dimen/icono_menu_alto"
             android:layout_margin="@dimen/margen_normal"
             android:contentDescription="@string/audio"
-            android:src="@drawable/microfono_toon" />
+            android:src="@drawable/audio" />
 
         <TextView
             android:id="@+id/tv_audio"
@@ -73,7 +73,7 @@
             android:layout_height="@dimen/icono_menu_alto"
             android:layout_margin="@dimen/margen_normal"
             android:contentDescription="@string/galeria"
-            android:src="@drawable/galeria_toon" />
+            android:src="@drawable/galeria" />
 
         <TextView
             android:id="@+id/tv_galeria"
@@ -97,7 +97,7 @@
             android:layout_width="@dimen/icono_menu_ancho"
             android:layout_height="@dimen/icono_menu_alto"
             android:layout_margin="@dimen/margen_normal"
-            android:src="@drawable/configuracion_toon"
+            android:src="@drawable/config"
             android:contentDescription="@string/configuraci_n"/>
 
         <ImageView
@@ -107,7 +107,7 @@
             android:layout_width="@dimen/icono_menu_ancho"
             android:layout_height="@dimen/icono_menu_alto"
             android:layout_margin="@dimen/margen_normal"
-            android:src="@drawable/exit"
+            android:src="@drawable/salir"
             android:contentDescription="@string/salir"/>
 
         <TextView
